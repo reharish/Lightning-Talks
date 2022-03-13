@@ -1,48 +1,70 @@
 = Dorking
 Harishbabu Rengaraj
 
-== What is it ?
+== What is it?
+
+* **The way of refining our search Queries.**
+* A dork query, sometimes just referred to as a dork, is a search string that uses advanced search operators to find information that is not readily available on a website.
+* Google dorking, can return information that is difficult to locate through simple search queries.
+* Is it even Legal? **Yes**, we are getting open and readily available information.
+
+== Where i got this?
 	
-	* A dork query, sometimes just referred to as a dork, is a search string that uses advanced search operators to find information that is not readily available on a website.
-	* Google dorking, can return information that is difficult to locate through simple search queries.
-	* **The Way of filtering the search results with query strings**
-
-== Where i got this ?
-
-image::figures/Amazing_spiderman.gif[align="center",width="50%"]
+image::figures/Amazing_spiderman.gif[align="center",width="75%"]
 	
-== Example
-
-
-
-== Table Demo
-
-[options="header",width="50%",align="center"]
+== Basic Dorks
+	
+[options="header",width="75%",align="center"]
 |====
-| HEADING 1 | HEADING 2
-| ROW 1	    | ROW 1
-| ROW 2	    | ROW 2
+| Query | Description
+| "search query"    | Get result for exact words in quotes.
+| site:<QDN>    | Do search only that domain.
+| inurl:"query"	|  show the result where the query in url.
+| AND OR | Can use logical operator to filter the results.
 |====
 
-== Two Column Demo
+== Contd.
 
-=== Right
+[options="header",width="75%",align="center"]
+|====
+| Query | Description
+| intext:"query" | searches only body text (i.e., ignores link text, URLs, and titles).
+| related:<QDN> | finds pages that are related to the specified page.
+| cache: | Will index last snapshot even the site is unavailable.
+|====
 
-[source,c]
-------
-#include <stdio.h>
+* Also, Google has https://www.google.com/advanced_search["Advanced Search Option"]. 
 
-int main()
-{
-	printf("Hello World\n");
-	return 0;
-}
-------
+== Downsides
 
-=== Left
+* A simple query like this can reveal juicy information on general poke around.
+https://www.google.com/search?q=filetype:config%20inurl:web.config%20inurl:ftp[filetype:config inurl:web.config inurl:ftp]
 
-  * BULLET-1
-  * BULLET-2
-  * BULLET-3
-  * BULLET-4
+* Malicious Actors can use this as a tool to do reconnaissance on specific targets.
+
+== How to prevent from Dorking?
+
+* Use **robots.txt** file. Which may present in / folder of the websites.
+* It can manage crawl traffic. Its a  _.gitignore_ file for search engines(a.k.a Web Crawlers). 
+* Also to prevent admin panel, secrets, and multimedia files from appearing in Google search results.
+	
+== robots.txt
+	
+[source, python]
+----
+	User-Agent: *
+	Disallow: /search
+	Disallow: /search*
+	Disallow: /wp-admin/*
+	Sitemap: https://site.com/static/files/sitemap.xml
+----
+
+
+== Disclaimer
+	
+**USE IT WISELY & RESPONSIBILY.**
+
+== ** **
+	
+image::figures/thank-you.jpg[align="center"]
 
