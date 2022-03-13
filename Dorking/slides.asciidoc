@@ -38,7 +38,8 @@ image::figures/Amazing_spiderman.gif[align="center",width="75%"]
 == Downsides
 
 * A simple query like this can reveal juicy information on general poke around.
-https://www.google.com/search?q=filetype:config%20inurl:web.config%20inurl:ftp[filetype:config inurl:web.config inurl:ftp]
+** https://www.google.com/search?q=filetype:config%20inurl:web.config%20inurl:ftp[filetype:config inurl:web.config inurl:ftp]
+** https://encrypted.google.com/search?q=intitle%3A%22LiveView+%2F+%E2%80%93+AXIS+%22+%7C+inurl%3Aview%2Fview.shtml[intitle:"LiveView / – AXIS" | inurl:view/view.shtml]
 
 * Malicious Actors can use this as a tool to do reconnaissance on specific targets.
 
