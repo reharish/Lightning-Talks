@@ -5,10 +5,15 @@ Harishbabu Rengaraj
 	
 	* A dork query, sometimes just referred to as a dork, is a search string that uses advanced search operators to find information that is not readily available on a website.
 	* Google dorking, can return information that is difficult to locate through simple search queries.
+	* **The Way of filtering the search results with query strings**
 
-== Image Demo
+== Where i got this ?
 
-image::figures/sample.png[align="center",width="50%"]
+image::figures/Amazing_spiderman.gif[align="center",width="50%"]
+	
+== Example
+
+
 
 == Table Demo
 
