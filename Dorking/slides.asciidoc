@@ -1,4 +1,4 @@
-= Dorking
+= Introduction to Dorking
 Harishbabu Rengaraj
 
 == What is it?
@@ -51,7 +51,7 @@ image::figures/Amazing_spiderman.gif[align="center",width="75%"]
 	
 == robots.txt
 	
-[source, python]
+[source, sh]
 ----
 	User-Agent: *
 	Disallow: /search
