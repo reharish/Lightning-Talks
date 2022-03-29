@@ -1,21 +1,29 @@
-= PRESENTATION-TITLE
-Zilogic Systems
+= Social Engineering
+Harishbabu Rengaraj
 
-== Bullets Demo
+== What is it ?
 
-  * BULLET-1
-  * BULLET-2
+* Type of Cyberattack accomplished through human interactions.
+* Which involves **psychological manipulation** to trick users into making security mistakes or giving away sensitive information.
+* The attacker tends to motivate the user into compromising themselves, rather than using brute force methods to breach your data.
+* No one is immune: Many smart and careful people can fall victim to a social.
+engineering attack without even realizing it until it is too late.
 
-== Image Demo
+== Motive
+- **Theft**, Obtaining valuables like information, access, or money.
+- **Sabotage**, Disrupting or corrupting data to cause harm. 
 
-image::figures/sample.png[align="center",width="50%"]
+== How it happens ?
+Attacker's use of precaution and confidence.
+- Emotion Manipulation : Triggering Fear, Excitement, Curiosity, Anger, and Guilt.
+- Urgency
+- Trust
 
-== Table Demo
-
+== Types of Attack 
 [options="header",width="50%",align="center"]
 |====
-| HEADING 1 | HEADING 2
-| ROW 1	    | ROW 1
+| Attack  | Description
+| Phishing	    | Most common phishing technique, which we all experienced atleast once.
 | ROW 2	    | ROW 2
 |====
 
