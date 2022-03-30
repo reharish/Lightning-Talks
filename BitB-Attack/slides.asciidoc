@@ -1,0 +1,42 @@
+= BitB Phishing
+Harishbabu Rengaraj
+
+== What is BitB
+
+=== Left
+	
+	* **Browser-in-the-Browser**.
+	* Mostly used in many websites as  `single sign on (SSO)`.
+	* Quite often when we authenticate to a website via Google, Microsoft, Apple etc.
+	* we’re provided a pop-up window that asks us to authenticate.
+
+=== Right
+
+image::figures/bitb.jpg[align="center",width="100%"]
+
+== BitB Attack
+
+=== Left
+	
+	* Replicating the entire website inside a iframe using basic HTML/CSS with JS is quite simple.
+	* Its basically indistinguishable, 
+	* Very few people would notice the slight differences between the two.
+
+=== Right
+
+image::figures/bitb-attack.jpg[align="center",width="100%"]
+	
+== Anyone can do this — including the bad guys
+
+link:windows-chrome/index.html[Click Here]
+
+== History
+	* Interestingly, the technique has been abused in the wild at least once before.
+	* Not more than a year, An Offensive Security firm disclosed Steam credentials by means of fake Counter-Strike: Global Offensive (**CS: GO**) websites.
+
+
+== Precautions
+	* Use Multifactor Authentication.
+	* Try to resize the popup Window.
+	
+== Thank you
