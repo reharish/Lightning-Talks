@@ -1,0 +1,44 @@
+= Boot Animation on Linux
+Harishbabu Rengaraj
+
+== Plymouth Service
+
+  * Plymouth is an free bootsplash  application that runs very early in the boot process (even before the root filesystem is mounted!)
+  * Linux supporting animations using Direct Rendering Manager (DRM). It gets packed into the initrd.
+  * Besides eye-candy, Plymouth also handles user interaction during boot.
+
+== Ubuntu 20.04 Splash Screen 
+
+image::figures/ubuntu_boot.jpg[align="center",width="50%"]
+
+== Setup
+
+* Download the theme.
+* Edit if needed.
+* Place it under `/usr/share/plymouth/themes/`
+* Switch to the theme.
+** **On Debian** : use `plymouth-set-default-theme`
+** **On Ubuntu** : use `update-alternatives --config default.plymouth`
+* Update the current initramfs by `update-initramfs -u`
+
+== Grub Settings for Boot Animation
+
+[source,bash]
+------
+# File /etc/default/grub
+
+# Change the Line from 
+# GRUB_CMDLINE_LINUX_DEFAULT="quiet"
+# to
+
+GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"
+
+------
+
+
+== Limitations
+
+* It is recommended to use animation that are below 100 KB.
+
+
+
