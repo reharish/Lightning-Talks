@@ -2,16 +2,46 @@
 
 set -e
 
-if [ "$#" != "1" ]
+html_index_gen()
+{
+    DIRS=`ls -l | grep ^d | cut -d " " -f 10`
+    for i in $DIRS
+    do
+	# echo "$i"
+	if [ -f $i/slides.html ]
+	then
+	    echo "$i/slides.html"
+	fi	
+    done
+}
+
+python_serve()
+{
+     # git pull
+     echo -e "\e[32mVisit: http://$(hostname):8000/ \e[0m"
+     echo "[ctrl + c] to exit"
+     python3 -m http.server $1 >/dev/null 2>&1
+     html_index_gen
+}
+
+# Start
+
+if [ "$1" == "open" ]
 then
-	git pull
-	echo -e "\e[32mVisit: http://$(hostname):8000/ \e[0m"
-	echo "[ctrl + c] to exit"
-	python3 -m http.server $1 >/dev/null 2>&1
+    echo "Opening in Browser"
+    if google-chrome --incognito index.html 2>1 >/dev/null
+    then
+	echo ""
+    else
+	echo "Google-chrome not installed."
+    fi
+    
+else
+    python_serve
 fi
 
 
 if [ "$?" == "143" ]
 then
-	echo "Python Server got killed"
+    echo "Python Server got killed"
 fi

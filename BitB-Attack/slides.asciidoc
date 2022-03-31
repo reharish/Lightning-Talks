@@ -31,12 +31,19 @@ image::figures/bitb-attack.jpg[align="center",width="100%"]
 link:windows-chrome/index.html[Click Here]
 
 == History
+
 	* Interestingly, the technique has been abused in the wild at least once before.
 	* Not more than a year, An Offensive Security firm disclosed Steam credentials by means of fake Counter-Strike: Global Offensive (**CS: GO**) websites.
 
 
-== Precautions
-	* Use Multifactor Authentication.
-	* Try to resize the popup Window.
-	
-== Thank you
+== ** **
+   * **Motive**
+     - Stealing Password
+   * **Precautions**
+     - Use Multifactor Authentication.
+     - Try to resize the popup Window.
+   * **Source**
+   - link:https://cybersecuritynews.com/bitb-attack/[CyberSecurityNews.com Blog Post]
+   - link:https://mrd0x.com/browser-in-the-browser-phishing-attack[Mr.D0x's Article]
+
+=== Thanks
