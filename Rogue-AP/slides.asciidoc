@@ -1,0 +1,51 @@
+= Rogue Access Point
+Harishbabu Rengaraj
+
+== Hi, I'm BobH, Hard Worker
+
+image::figures/intro.png[align="center",width="20%"]
+
+== But, Late for Work..
+
+image::figures/late.png[align="center",width="50%"]
+
+== Always...
+
+image::figures/always.png[align="center",width="30%"]
+
+== Caught by his Boss...
+
+image::figures/boss-seen.png[align="center",width="75%"]
+
+== Got Fired from Job..
+
+image::figures/got-fired.png[align="center",width="75%"]
+
+== sabotage Plan.
+
+image::figures/sabotage.png[align="center",width="75%"]
+
+== Installing a Rogue AP near the office...
+
+image::figures/Rogue-ap-install.png[align="center",width="75%"]
+
+== Gained Access..
+
+image::figures/control.png[align="center",width="75%"]
+
+== Controlling the Entire Network.
+
+image::figures/entire-network.png[align="center",width="75%"]
+
+
+== Rogue AP attack
+
+* The Worst nightmare of organizations.
+* Planting unauthorized device inside the secured network.
+* Devices may involved such as switches, Routers, WiFi AP
+
+== ** **
+
+* Like, BobH did anyone can do this attack with ease.
+* 
+
