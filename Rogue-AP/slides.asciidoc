@@ -1,51 +1,119 @@
 = Rogue Access Point
 Harishbabu Rengaraj
 
-== Hi, I'm BobH, Hard Worker
+== Hi, I'm BobH, Finance Associate.
 
 image::figures/intro.png[align="center",width="20%"]
 
-== But, Late for Work..
+== Violated the Office Policy
 
-image::figures/late.png[align="center",width="50%"]
+* By falsifying and manipulating official records.
 
-== Always...
+image::figures/sabotage.png[align="center",width="30%"]
 
-image::figures/always.png[align="center",width="30%"]
-
-== Caught by his Boss...
-
-image::figures/boss-seen.png[align="center",width="75%"]
-
-== Got Fired from Job..
+== Caught by the Administration...
 
 image::figures/got-fired.png[align="center",width="75%"]
+
+== Got Fired from his Job..
+
+image::figures/always.png[align="center",width="75%"]
 
 == sabotage Plan.
 
 image::figures/sabotage.png[align="center",width="75%"]
 
-== Installing a Rogue AP near the office...
+== Installing a WiFi AP near the office...
 
-image::figures/Rogue-ap-install.png[align="center",width="75%"]
+* That has same `SSID` and Credentials as office device.
 
-== Gained Access..
+image::figures/Rogue-ap-install.png[align="center",width="70%"]
+
+== If anyone Connect, I got Access..
 
 image::figures/control.png[align="center",width="75%"]
 
-== Controlling the Entire Network.
+== Accessing Entire Network.
+
+* Even can control entire network.
 
 image::figures/entire-network.png[align="center",width="75%"]
 
+== Disclaimer
+
+* Educational Purpose only.
+
+* Please don't use it anywhere.
 
 == Rogue AP attack
 
-* The Worst nightmare of organizations.
-* Planting unauthorized device inside the secured network.
-* Devices may involved such as switches, Routers, WiFi AP
+=== Left
+
+* Falls under Social Engineering.
+
+* Actions may involve planting unauthorized device inside the secured network.
+
+* Devices such as switches, Routers, WiFi AP.
+
+=== Right
+
+image::figures/rogue-ap.jpg[align="center",width="75%"]
+
 
 == ** **
 
 * Like, BobH did anyone can do this attack with ease.
-* 
 
+* The device, He installed is called `Rouge AP`.
+
+* It is rarely Noticable. So, Normal people can't realize even if they used for this attack.
+
+* In addition to that, Ther are many tools available for free.
+
+* Also, Some deploy ready equipments available online such as `WiFi Pineapple`
+
+== Tools
+
+=== Left
+
+* `Evil-Twin Framework` for RED TEAM
+
+  - OpenSource
+  - Written in python.
+  - Used for WiFi Pentesting.
+  - Able to to Packet sniffing (scapy), Packet injection, and Twin AP creation.
+
+=== Right
+
+image::figures/EvilTwinFramework.jpg[align="center",width="75%"]
+
+* It is so popular, that Rogue AP attack often refered as Evil-Twin Attack.
+
+== Precaution & Safety
+
+* Follow regular Security update.
+
+* Say “no” to public Wi-Fi.
+
+* Encourage use of properly installed, configured and secured wireless LANs only.
+
+* Good think is some new device can tell apart Evil-Twins.
+
+== Prevention Tools
+
+=== Left
+
+* `Snort 3` for BLUE TEAM.
+
+  - Opensource Intrution Prevention Software.
+
+  - uses a series of rules that help define malicious network activity and Stop those packets.
+  
+  - Capable of real-time traffic analysis and packet logging.
+  
+=== Right
+
+image::figures/snort.jpg[align="center",width="75%"]
+
+
+== Thank you
