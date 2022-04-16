@@ -1,7 +1,7 @@
 = Rogue Access Point
 Harishbabu Rengaraj
 
-== Hi, I'm BobH, Finance Associate.
+== He is BobH, Finance Employee.
 
 image::figures/intro.png[align="center",width="20%"]
 
@@ -19,7 +19,11 @@ image::figures/got-fired.png[align="center",width="75%"]
 
 image::figures/always.png[align="center",width="75%"]
 
-== sabotage Plan.
+== Filled with Rages.
+
+* Got anger.
+
+* Planned to sabatoge the Management.
 
 image::figures/sabotage.png[align="center",width="75%"]
 
@@ -29,7 +33,7 @@ image::figures/sabotage.png[align="center",width="75%"]
 
 image::figures/Rogue-ap-install.png[align="center",width="70%"]
 
-== If anyone Connect, I got Access..
+== If anyone get Connect,He got Access..
 
 image::figures/control.png[align="center",width="75%"]
 
@@ -49,7 +53,7 @@ image::figures/entire-network.png[align="center",width="75%"]
 
 === Left
 
-* Falls under Social Engineering.
+* A type of Social Engineering.
 
 * Actions may involve planting unauthorized device inside the secured network.
 
@@ -62,21 +66,25 @@ image::figures/rogue-ap.jpg[align="center",width="75%"]
 
 == ** **
 
-* Like, BobH did anyone can do this attack with ease.
+=== Right
 
-* The device, He installed is called `Rouge AP`.
+image::figures/rogue-ap-car.jpg[align="center",width="75%"]
 
 * It is rarely Noticable. So, Normal people can't realize even if they used for this attack.
+
+=== Left
+
+* Like BobH did, Anyone can do this attack with ease.
 
 * In addition to that, Ther are many tools available for free.
 
 * Also, Some deploy ready equipments available online such as `WiFi Pineapple`
 
-== Tools
+== Tool
 
 === Left
 
-* `Evil-Twin Framework` for RED TEAM
+* `Evil-Twin Framework` for Red Team
 
   - OpenSource
   - Written in python.
@@ -89,21 +97,11 @@ image::figures/EvilTwinFramework.jpg[align="center",width="75%"]
 
 * It is so popular, that Rogue AP attack often refered as Evil-Twin Attack.
 
-== Precaution & Safety
-
-* Follow regular Security update.
-
-* Say “no” to public Wi-Fi.
-
-* Encourage use of properly installed, configured and secured wireless LANs only.
-
-* Good think is some new device can tell apart Evil-Twins.
-
 == Prevention Tools
 
 === Left
 
-* `Snort 3` for BLUE TEAM.
+* `Snort 3` for Blue Team.
 
   - Opensource Intrution Prevention Software.
 
@@ -113,7 +111,24 @@ image::figures/EvilTwinFramework.jpg[align="center",width="75%"]
   
 === Right
 
-image::figures/snort.jpg[align="center",width="75%"]
+image::figures/snort.jpg[align="center",width="100%"]
 
+* `Snort 3 IPS`
+
+== Precaution & Safety
+
+=== Right
+
+image::figures/free-wifi.jpg[align="center",width="100%"]
+
+* Say “no” to public Wi-Fi.
+
+=== Left
+
+* Use VPN over a public Wi-Fi.
+
+* Encourage use of properly installed, configured and secured wireless LANs only.
+
+* Good think is some new device can tell apart Evil-Twins.
 
 == Thank you
