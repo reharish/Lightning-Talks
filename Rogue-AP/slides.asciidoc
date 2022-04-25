@@ -29,7 +29,7 @@ image::figures/sabotage.png[align="center",width="75%"]
 
 == Installing a WiFi AP near the office...
 
-* That has same `SSID` and Credentials as office device.
+* Which has the same `SSID` and `Credentials` as office device.
 
 image::figures/Rogue-ap-install.png[align="center",width="70%"]
 
@@ -76,7 +76,7 @@ image::figures/rogue-ap-car.jpg[align="center",width="75%"]
 
 * Like BobH did, Anyone can do this attack with ease.
 
-* In addition to that, Ther are many tools available for free.
+* In addition to that, There are some tools available for free.
 
 * Also, Some deploy ready equipments available online such as `WiFi Pineapple`
 
@@ -97,7 +97,7 @@ image::figures/EvilTwinFramework.jpg[align="center",width="75%"]
 
 * It is so popular, that Rogue AP attack often refered as Evil-Twin Attack.
 
-== Prevention Tools
+== Prevention Tool
 
 === Left
 
@@ -105,7 +105,7 @@ image::figures/EvilTwinFramework.jpg[align="center",width="75%"]
 
   - Opensource Intrution Prevention Software.
 
-  - uses a series of rules that help define malicious network activity and Stop those packets.
+  - Uses a series of rules that help define malicious network activity and Stop those packets.
   
   - Capable of real-time traffic analysis and packet logging.
   

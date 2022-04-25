@@ -1,0 +1,100 @@
+= Torrent
+Harishbabu Rengaraj
+
+== What is Torrent?
+
+=== Left 
+* The Protocol for sharing large file over internet.
+* The term `torrent` refers to a file shared through a decentralized, `peer-to-peer (P2P)` sharing network.
+* Which allows users to exchange files without uploading these to a server.
+
+=== Right
+
+image::figures/p2p.jpg[align="center",width="75%"]
+
+== How Does it Work?
+
+=== Left 
+
+* Torrenting doesn't depend on a centralized server for storing files.
+
+* Instead, bits of data from individual large files are saved in participating peers in a swarm to facilitate the file-sharing process.
+
+=== Right
+
+[options="header",width="75%",align="center"]
+|====
+| Terms | Meanings
+| peers	    | Clients
+| seeders    | Uploaders
+| leechers | Downloaders
+| Tracker | Monitors
+| announce | Trackers url
+| .torrent | meta-data file
+|====
+
+
+== Example
+
+=== Left
+
+* Consider downloading a Distro image file (ubuntu.iso).
+* The site will provide a `.torrent` file consist of infomation such as announce, info, name, pieces, and size.
+* Also contains the Checksum of the file for integrity.
+
+=== Right
+
+image::figures/torrent.jpg[align="center",width="90%"]
+
+== Torrent Trackers
+
+* Tracker works like Tinder that match users based on the preferences they input.
+
+* Which is a server that helps users communicate with other peers faster by monitoring which peer machines keep specific files.
+
+* Once the P2P download has started, the connection to the tracker is no longer necessary.
+
+== Opensource Torrent Clients
+
+Transmission
+
+    * Available for Windows, GNU/Linux & Mac
+    * Preinstalled in many distros.
+
+Deluge
+
+    * For Windows, Mac & Linux.
+
+LibreTorrent
+
+    * For android available on Playstore and F-Droid.
+
+== Is it illegal?
+
+   * Torrenting non-copyright content isn't illegal
+   * But, downloading and sharing copyrighted content is illegal.
+   * You can get caught by law enforcers and Internet service providers (ISPs), especially if you do not hide your IP address.
+
+== Torrenting over VPN
+
+   * We can use Torrent over VPN.
+   * It can conceal your entire online activity from your ISP.
+   * Bear in mind that ISPs track VPN traffic, though, so keep your torrent use legal.
+
+
+== Software updates via Torrent
+
+Microsoft using Torrent like mechanism to update the softwares.
+(Turn Off would be recommended)
+
+* If one Machine has downloaded update on a local network.
+
+* It look for other Windows machine on the same network using DDNS.
+
+* Shares it to every other machine which requires the update. It drastically reduce performance of the PC.
+
+* This Feature can be found under `Delivery Optimization` option in Settings.
+
+* Also, It is easily exploitable by creating  a fake update.(Worm Attack).
+
+== Thanks you
