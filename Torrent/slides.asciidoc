@@ -1,4 +1,4 @@
-= Torrent
+= Torrent Overview
 Harishbabu Rengaraj
 
 == What is Torrent?
@@ -54,6 +54,12 @@ image::figures/torrent.jpg[align="center",width="90%"]
 
 * Once the P2P download has started, the connection to the tracker is no longer necessary.
 
+== Advantages
+
+* Fast
+* No need for a Data Server
+
+
 == Opensource Torrent Clients
 
 Transmission
@@ -96,5 +102,11 @@ Microsoft using Torrent like mechanism to update the softwares.
 * This Feature can be found under `Delivery Optimization` option in Settings.
 
 * Also, It is easily exploitable by creating  a fake update.(Worm Attack).
+
+
+== Creating a Torrent
+
+* Can be done in client.
+
 
 == Thanks you
