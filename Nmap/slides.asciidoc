@@ -1,0 +1,89 @@
+= Glimpse of Nmap
+Harishbabu Rengaraj
+
+== Network Mapper
+
+=== Left
+
+image::figures/nmap.jpg[align="center",width="100%"]
+
+=== Right
+
+    * Free & OpenSource utility.
+
+    * Used for network discovery and security auditing.
+
+    * Uses raw IP packets in novel ways to determine OS, Service, and Inventory in the Network.
+
+== Scan Types
+
+   * TCP Connect Scans (-sT)
+
+   * SYN "Half-open" Scans (-sS)
+
+   * UDP Scans (-sU)
+
+== TCP Connect Scan
+
+=== Left
+
+   * Nmap's Default scan.
+   * Involves 3 way Handshake.
+   * Achieved through -sT flag as arg.
+
+E.g. `nmap -sT 10.10.10.1 -v`
+
+=== Right
+
+image::figures/tcp.jpg[align="center",width="100%"]
+
+* A standard TCP Three-way Handshake
+
+
+== Stealth Scan
+
+   * Aka "Half-Open" scan.
+   * Ends with RST Packet.
+   * Its Like "Asking for something, then says Nevermind".
+
+`nmap -sS <IP 4ddress>`
+
+image::figures/syn-scan.jpg[align="center",width="100%"]
+
+== UDP scan
+
+   * Used to scan UDP ports. Its Stateless.
+   * Sending Packets directly to the target ports.
+   * If RST is reply. Then the port is closed.
+   * Or Else the port marked as `Open|filtered`.
+
+
+== Ping Sweep
+
+   * Nmap sends an ICMP packet to each possible IP address for the specified network .
+   * To obtain a "map" of the network-structure.
+   * Achieved through `-sn` flag.
+   
+Eg.
+	
+`nmap -sn 192.168.0.0/24`
+
+
+== Advanced Scans
+
+=== Right
+
+* **Null Scan** (-sN) - No flag.
+* **Fin Scan** (-sF) - Fin Flag only.
+* **Xmas Scan** (-sX) - 3 flags.
+
+As per RPC protocol the target should repond with RST, If port is closed.
+
+Otherwise, the port considered as open.
+
+=== Left
+image::figures/null.jpg[align="center",width="100%"]
+
+== ** **
+
+image::figures/thank-you.jpg[align="center",width="30%"]
