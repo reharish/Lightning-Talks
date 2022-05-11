@@ -90,7 +90,7 @@ LibreTorrent
 
 == Software updates via Torrent
 
-Microsoft using Torrent like mechanism to update the softwares.
+Microsoft using Torrent like tech to update their softwares.
 (Turn Off would be recommended)
 
 * If one Machine has downloaded update on a local network.
@@ -101,7 +101,7 @@ Microsoft using Torrent like mechanism to update the softwares.
 
 * This Feature can be found under `Delivery Optimization` option in Settings.
 
-* Also, It is easily exploitable by creating  a fake update.(Worm Attack).
+* Also, It is easily exploitable by creating a fake update.(Worm Attack).
 
 
 == Creating a Torrent
