@@ -1,0 +1,138 @@
+= How i Bodged my first Linux Issue
+Harishbabu Rengaraj
+
+== Bodging
+
+* Usually a temporary repair; a patch, a repair.
+
+* But, Works all the time.
+
+image::figures/bodge.jpg[align="center"]
+
+== ** **
+
+* In 2020, I got my first laptop with windows.
+
+* Messed up windows. By Removing Partitions that i think not needed.
+
+* Ended up having a Laptop with only BIOS.
+
+* At that time all i know, Gnu/Linux is an OS.
+
+== Red Pill or Blue Pill
+
+image::figures/choose.jpg[width="25%",align="center"]
+
+[options="header",width="75%",align="center"]
+|====
+| link:./[Windows] | Linux
+| know how to use | Don't know what crap is it.
+| Stuck in a loop and Believing what i wish to believe	    |     :-)
+|====
+
+== Made a wise Choice
+   
+image::figures/elon-pill.jpg[align="center"]
+
+* My curiosity chooses `red`.
+
+
+== After Installation
+
+Laptop have a Wifi/Bluetooth Combo plugged into one PCIe 1X slot (Qualcomm QCA9377).
+
+* Debian can't detect the device as WiFi.
+
+* But, Bluetooth works just fine.
+
+
+== Initial Troubleshot
+
+* Thought it was a driver issue, like in Windows.
+
+* Got into the Qualcomm site. They have source code instead of `EXE` or other exec.
+
+* Gone through all forums.
+
+* No Luck.
+
+== Troubleshot contd.
+
+* WiFi not working in ubuntu 20.04
+
+* QC9377 driver for ubuntu 20.04
+
+* how to install from a source code
+
+* what is build-essentials
+
+* install gcc version 6
+
+* set gcc6 as default
+
+* how to build linux wifi driver
+
+* modprobe drivers
+
+* Do I need to reboot after modprobe?
+
+* lsmod command
+
+* blacklist.conf
+
+* what is dmesg
+
+* backport-Package
+
+* build linux kernel from git source.
+
+
+`Nothing Works`
+
+== Troubleshot on Other Side.
+
+* Tested with USB WiFi Dongle .. Works.
+
+* Tried other distros such as Manjaro, Mint, Kali, Parrot, pop-OS, Boss, and others.
+
+* Finally Contacted Support, They told me BIOS is specially made for Windows, So Please switch to it.
+
+* Got a spark.
+
+== Tweak in BIOS
+
+* Went through all settings in BIOS.
+
+* Nothing about that adapter. Other than PXE boot.
+
+* The device must not be initialized.
+
+* So, I put PXE WLAN BOOT on boot priority 1 and Linux on 2.
+
+== Moment of Truth
+
+* Switched Laptop ON.
+
+* Booted into PXE WLAN boot. Failed to no source..Expected.
+
+* Then, Got into ubuntu
+
+* And, It works.
+
+== ** **
+
+* Its not the Authentic Solution for the issue but it works.
+
+* I Bodged It.
+
+== Authentic Solution
+
+* Go to BIOS/UEFI
+
+* Boot behaviour
+
+* Change from Fast boot to Thorough. Will initialize all the Hardwares.
+
+
+
+== Thank you
