@@ -117,13 +117,15 @@ Laptop have a Wifi/Bluetooth Combo plugged into one PCIe 1X slot (Qualcomm QCA93
 
 * Then, Got into ubuntu
 
-* And, It works.
+* And, WiFi works..
 
 == ** **
 
 * Its not the Authentic Solution for the issue but it works.
 
 * I Bodged It.
+
+* And I posted in forums which has this issue open.
 
 == Authentic Solution
 
