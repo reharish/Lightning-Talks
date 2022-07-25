@@ -1,0 +1,61 @@
+= Zero-Conf Networking
+Harishbabu Rengaraj
+
+== Zero-Configuration 
+
+* The primary concept is to eliminate DHCP, DNS and other
+manual network settings on a small LAN.
+
+* It let the hosts share the service with network and vice versa.
+
+* Based on **mDNS**(Multicast Domain Name System) and **DNS-SD**(DNS Service Discovery).
+
+== Automate
+
+* Assignment of IP Address.
+
+* Resolution by Hostname.
+
+* Configuration of Network services such as Printers.
+
+== Implementaion
+Different OS have their own zero-conf implementation.
+
+* **Apple** : `Bonjour`
+  - Implemented on both Mac and iOS.
+
+* **Linux/BSD** : `Avahi`
+  - Emulates Apple Bonjour
+  - Almost available in all distro by default.
+
+* **Windows** : `Link-local Multicast Name Resolution (LLMNR)`
+
+[options="header",width="50%",align="center"]
+|====
+| HEADING 1 | HEADING 2
+| ROW 1	    | ROW 1
+| ROW 2	    | ROW 2
+|====
+
+== Two Column Demo
+
+=== Right
+
+[source,c]
+------
+#include <stdio.h>
+
+int main()
+{
+	printf("Hello World\n");
+	return 0;
+}
+------
+
+=== Left
+
+  * BULLET-1
+  * BULLET-2
+  * BULLET-3
+  * BULLET-4
+
