@@ -4,58 +4,77 @@ Harishbabu Rengaraj
 == Zero-Configuration 
 
 * The primary concept is to eliminate DHCP, DNS and other
-manual network settings on a small LAN.
+manual network settings, Even the IP address in the PAN(Personal Area Network).
 
 * It let the hosts share the service with network and vice versa.
 
-* Based on **mDNS**(Multicast Domain Name System) and **DNS-SD**(DNS Service Discovery).
+* Based on **mDNS** (Multicast Domain Name System) and **DNS-SD**(DNS Service Discovery).
 
-== Automate
 
-* Assignment of IP Address.
+== Why mDNS?
 
 * Resolution by Hostname.
 
 * Configuration of Network services such as Printers.
 
+* Share service across LAN.
+
+* Able to communicate with APIPA addr `169.254.0.0/16`
+
+
+== what is Multicast?
+
+* falls under `class D` on IPv4.
+
+* IP address not assigned to group of nodes.
+  
+* Which runs on port 5353/UDP. 
+
+* According to IANA std,
+  - IPv4: `224.0.0.254`
+  - IPV6: `ff00::/8`
+  
+* Domain name `.local`
+
 == Implementaion
+
 Different OS have their own zero-conf implementation.
 
 * **Apple** : `Bonjour`
   - Implemented on both Mac and iOS.
 
-* **Linux/BSD** : `Avahi`
-  - Emulates Apple Bonjour
-  - Almost available in all distro by default.
+* **Linux/BSD** : `Avahi/FlexMDNS`
+  - Came to linux on 2005.
+  - Emulates Apple Bonjour.
+  - Now, Almost available in all distro by default.
 
-* **Windows** : `Link-local Multicast Name Resolution (LLMNR)`
+* **Windows** : `NetBIOS`
+  - Resolve IP by just hostname.
+  - Share resources between them.
 
-[options="header",width="50%",align="center"]
-|====
-| HEADING 1 | HEADING 2
-| ROW 1	    | ROW 1
-| ROW 2	    | ROW 2
-|====
 
-== Two Column Demo
+== How it works?
 
-=== Right
+* If a PC wants to access a website hosted by server(user-latitude-7400)
+  the client request will be `http://user-latitude-7400.local/`
+  
+  - Client request to mDNS group 224.0.0.254 :
 
-[source,c]
-------
-#include <stdio.h>
+    	   - `Where are you? user-latitude-7400.local`.
 
-int main()
-{
-	printf("Hello World\n");
-	return 0;
-}
-------
+  - Server responds to client :
+  
+    	   -`I'm here. 10.0.0.2`.
 
-=== Left
+  - Then, the IP mapped to hostname and mDNS cache stored in client.
 
-  * BULLET-1
-  * BULLET-2
-  * BULLET-3
-  * BULLET-4
+  - Next time, the client use its own cache file to identify the server.
 
+
+== Android mDNS
+
+* Android kind of support mDNS.
+
+* Limited to apps that implemented specific API.
+
+* It won't work like linux/Windows mDNS feature.

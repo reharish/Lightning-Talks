@@ -4199,7 +4199,7 @@ setTimeout(w3c_slidy.hide_slides, 50);
 <li>
 <span>
 The primary concept is to eliminate DHCP, DNS and other
-manual network settings on a small LAN.
+manual network settings, Even the IP address in the PAN(Personal Area Network).
 </span>
 </li>
 <li>
@@ -4209,21 +4209,16 @@ It let the hosts share the service with network and vice versa.
 </li>
 <li>
 <span>
-Based on <strong>mDNS</strong>(Multicast Domain Name System) and <strong>DNS-SD</strong>(DNS Service Discovery).
+Based on <strong>mDNS</strong> (Multicast Domain Name System) and <strong>DNS-SD</strong>(DNS Service Discovery).
 </span>
 </li>
 </ul></div>
 </div>
 </div>
 <div class="slide sect1">
-<h2 id="_automate">Automate</h2>
+<h2 id="_why_mdns">Why mDNS?</h2>
 <div class="sectionbody">
 <div class=""><ul class="">
-<li>
-<span>
-Assignment of IP Address.
-</span>
-</li>
 <li>
 <span>
 Resolution by Hostname.
@@ -4232,6 +4227,60 @@ Resolution by Hostname.
 <li>
 <span>
 Configuration of Network services such as Printers.
+</span>
+</li>
+<li>
+<span>
+Share service across LAN.
+</span>
+</li>
+<li>
+<span>
+Able to communicate with APIPA addr <tt>169.254.0.0/16</tt>
+</span>
+</li>
+</ul></div>
+</div>
+</div>
+<div class="slide sect1">
+<h2 id="_what_is_multicast">what is Multicast?</h2>
+<div class="sectionbody">
+<div class=""><ul class="">
+<li>
+<span>
+falls under <tt>class D</tt> on IPv4.
+</span>
+</li>
+<li>
+<span>
+IP address not assigned to group of nodes.
+</span>
+</li>
+<li>
+<span>
+Which runs on port 5353/UDP.
+</span>
+</li>
+<li>
+<span>
+According to IANA std,
+</span>
+<div class=""><ul class="">
+<li>
+<span>
+IPv4: <tt>224.0.0.254</tt>
+</span>
+</li>
+<li>
+<span>
+IPV6: <tt>ff00::/8</tt>
+</span>
+</li>
+</ul></div>
+</li>
+<li>
+<span>
+Domain name <tt>.local</tt>
 </span>
 </li>
 </ul></div>
@@ -4256,96 +4305,110 @@ Implemented on both Mac and iOS.
 </li>
 <li>
 <span>
-<strong>Linux/BSD</strong> : <tt>Avahi</tt>
+<strong>Linux/BSD</strong> : <tt>Avahi/FlexMDNS</tt>
 </span>
 <div class=""><ul class="">
 <li>
 <span>
-Emulates Apple Bonjour
+Came to linux on 2005.
 </span>
 </li>
 <li>
 <span>
-Almost available in all distro by default.
+Emulates Apple Bonjour.
+</span>
+</li>
+<li>
+<span>
+Now, Almost available in all distro by default.
 </span>
 </li>
 </ul></div>
 </li>
 <li>
 <span>
-<strong>Windows</strong> : <tt>Link-local Multicast Name Resolution (LLMNR)</tt>
+<strong>Windows</strong> : <tt>NetBIOS</tt>
+</span>
+<div class=""><ul class="">
+<li>
+<span>
+Resolve IP by just hostname.
+</span>
+</li>
+<li>
+<span>
+Share resources between them.
 </span>
 </li>
 </ul></div>
-<div class="tableblock">
-<table rules="all"
-style="margin-left:auto; margin-right:auto;"
-width="50%"
-frame="border"
-cellspacing="0" cellpadding="4">
-<col width="50%" />
-<col width="50%" />
-<thead>
-<tr>
-<th align="left" valign="top"> HEADING 1 </th>
-<th align="left" valign="top"> HEADING 2</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left" valign="top"><p class="table">ROW 1</p></td>
-<td align="left" valign="top"><p class="table">ROW 1</p></td>
-</tr>
-<tr>
-<td align="left" valign="top"><p class="table">ROW 2</p></td>
-<td align="left" valign="top"><p class="table">ROW 2</p></td>
-</tr>
-</tbody>
-</table>
-</div>
+</li>
+</ul></div>
 </div>
 </div>
 <div class="slide sect1">
-<h2 id="_two_column_demo">Two Column Demo</h2>
+<h2 id="_how_it_works">How it works?</h2>
 <div class="sectionbody">
-<div class="sect2">
-<div class="listingblock">
-<div class="content"><!-- Generator: GNU source-highlight
-by Lorenzo Bettini
-http://www.lorenzobettini.it
-http://www.gnu.org/software/src-highlite -->
-<pre><tt><span style="font-weight: bold"><span style="color: #000080">#include</span></span> <span style="color: #FF0000">&lt;stdio.h&gt;</span>
-
-<span style="color: #009900">int</span> <span style="font-weight: bold"><span style="color: #000000">main</span></span><span style="color: #990000">()</span>
-<span style="color: #FF0000">{</span>
-        <span style="font-weight: bold"><span style="color: #000000">printf</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Hello World</span><span style="color: #CC33CC">\n</span><span style="color: #FF0000">"</span><span style="color: #990000">);</span>
-        <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> <span style="color: #993399">0</span><span style="color: #990000">;</span>
-<span style="color: #FF0000">}</span></tt></pre></div></div>
-</div>
-<div class="sect2">
 <div class=""><ul class="">
 <li>
 <span>
-BULLET-1
+If a PC wants to access a website hosted by server(user-latitude-7400)
+  the client request will be <tt>http://user-latitude-7400.local/</tt>
+</span>
+<div class=""><ul class="">
+<li>
+<span>
+Client request to mDNS group 224.0.0.254 :
 </span>
 </li>
 <li>
 <span>
-BULLET-2
+<tt>Where are you? user-latitude-7400.local</tt>.
 </span>
 </li>
 <li>
 <span>
-BULLET-3
+Server responds to client :
+</span>
+<div class="listingblock literal">
+<div class="content">
+<pre><tt>-`I'm here. 10.0.0.2`.</tt></pre>
+</div></div>
+</li>
+<li>
+<span>
+Then, the IP mapped to hostname and mDNS cache stored in client.
 </span>
 </li>
 <li>
 <span>
-BULLET-4
+Next time, the client use its own cache file to identify the server.
 </span>
 </li>
 </ul></div>
+</li>
+</ul></div>
 </div>
+</div>
+<div class="slide sect1">
+<h2 id="_android_mdns">Android mDNS</h2>
+<div class="sectionbody">
+<div class=""><ul class="">
+<li>
+<span>
+Android kind of support mDNS.
+</span>
+</li>
+<li>
+<span>
+Limited to apps that implemented specific API.
+</span>
+</li>
+<li>
+<span>
+It won&#8217;t work like linux/Windows mDNS feature.
+</span>
+</li>
+</ul></div>
 </div>
 </div>
 </body>
