@@ -1,0 +1,27 @@
+= Docker Compose
+Harishbabu Rengaraj
+
+== Docker
+
+* It packs, ships, and runs applications as a lightweight, portable, and self-sufficient containers with dependencies included.
+
+* Also, It reduce the term "It works on my machine"
+
+== Docker Example
+
+  * Creating Flask API Application.
+
+  * What we need
+    - python with modules such as Flask & flask_restful
+
+== Docker compose
+  
+  * A tool that defined and share multi-container applications.
+
+  * With that, We can create an YAML file to define services with a single command.
+
+== Docker-Compose Example
+
+ * Create a website and make it as container.
+
+ * Adding the API from Docker example.

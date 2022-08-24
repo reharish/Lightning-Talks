@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  
+  application:
+    build: ./app
+    volumes:
+      - ./app:/usr/src/app
+  
+  website:
+    image: php:apache
+    volumes:
+      - ./web:/var/www/html
+    ports:
+      - 8080:80
+    depends_on:
+      - application
+    restart: always
