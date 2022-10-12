@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  alice:
+    hostname: alice
+    image: busybox:latest
+    entrypoint: ["top"]
+    
+  bob:
+    hostname: bob
+    image: busybox:latest
+    entrypoint: ["top"]

