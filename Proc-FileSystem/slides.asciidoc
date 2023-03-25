@@ -1,0 +1,112 @@
+= /proc File System
+
+== CTF Challange
+
+image::figures/ctf.png[align="center"]
+
+[source, sh]
+-------
+echo "10.10.11.201    bagel.htb" >> /etc/hosts
+-------
+
+== Reconnaissance
+
+* Scanning Open ports using Nmap
+
+[source, html]
+------
+8000/tcp open  http-alt syn-ack Werkzeug/2.2.2 Python/3.10.9
+Date: Sat, 11 Mar 2023 17:22:00 GMT
+|     Content-Type: text/html; charset=utf-8
+|     Content-Length: 263
+|     Location: http://bagel.htb:8000/?page=index.html
+|     Connection: close
+|     <!doctype html>
+|     <html lang=en>
+|     <title>Redirecting...</title>
+|     <h1>Redirecting...</h1>
+------
+
+* Must be running on Docker
+
+== Enumeration
+
+image::figures/site.png[align="center"]
+
+
+* `?page=index.html` at the end, Thats Ring a bell
+
+
+== Checking for LFI vuln
+
+* If LFI, We can possibly get any file,
+
+[source, bash]
+------
+http://bagel.htb:8000/?page=<file>
+------
+
+* Getting `/etc/passwd` file
+
+image::figures/lfi_test.png[align="center", width="100%"]
+
+
+== Enumerating the vuln
+
+* Getting current process via LFI
+
+* `/proc/self/cmdline` -> contains current process
+
+image::figures/cmdline.png[align="center", width="150%"]
+
+* Getting Python script
+
+image::figures/flask.png[align="center", width="150%"]
+
+== contd..
+
+[source, python]
+------
+@app.route('/orders')
+def order():
+# don't forget to run the order app first with "dotnet <path to .dll>" command. 
+# Use your ssh key to access the machine.
+    try:
+        ws = websocket.WebSocket()    
+        ws.connect("ws://127.0.0.1:5000/") # connect to order app
+        order = {"ReadOrder":"orders.txt"}
+        data = str(json.dumps(order))
+        ws.send(data)
+        result = ws.recv()
+        return(json.loads(result)['ReadOrder'])
+    except:
+        return("Unable to connect")
+------
+
+== Listing all process
+
+image::figures/process.png[align="center", width="150%"]
+
+image::figures/dotnet-process.png[align="center", width="70%"]
+
+
+== procfs
+
+=== Left
+
+* Process Information
+
+* Current State of Kernel
+
+=== Right 
+
+[cols="1,1"]
+|===
+| `/proc/cmdline` | Kernel Parameters
+| `/proc/version` | Kernerl version and details
+| `/proc/uptime`  | Machine/Kernel uptime
+|===
+
+== ** **
+
+image::figures/proc.png[align="center", width=""]

@@ -9,6 +9,8 @@ Harishbabu Rengaraj
 
 == Docker Example
 
+  * Run `docker-compose up `
+
   * Creating Flask API Application.
 
   * What we need
@@ -25,3 +27,5 @@ Harishbabu Rengaraj
  * Create a website and make it as container.
 
  * Adding the API from Docker example.
+
+
