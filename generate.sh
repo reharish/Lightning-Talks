@@ -45,7 +45,7 @@ start_python_server()
 {
     cd $CWD
     # git pull
-    html_index_gen
+    generate_index_page
     echo -e "\e[32mVisit: http://$(hostname):8000/ \e[0m"
     echo "[ctrl + c] to exit"
     python3 -m http.server $1 >/dev/null 2>&1
@@ -55,11 +55,11 @@ start_python_server()
 
 if [ "$1" == "open" ]
 then
-    if google-chrome --incognito index.html 2>1 >/dev/null
+    if google-chrome --incognito index.html 2>&1 >/dev/null
     then
         echo "Opening in Browser"
     else
-        firefox --private-window index.html 2>1 >/dev/null
+        firefox --private-window index.html 2>&1 >/dev/null
 	    echo "Opening on Firefox."
     fi
     
