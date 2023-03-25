@@ -64,8 +64,12 @@ then
 	echo "Google-chrome not installed."
     fi
     
-else
+elif [ "$1" == "serve" ]
+then
     python_server
+else
+    make_slides
+    html_index_gen
 fi
 
 
