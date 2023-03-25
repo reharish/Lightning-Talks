@@ -5,7 +5,7 @@ set -e
 HTML_FILE="index.html"
 CWD=$PWD
 
-make_slides()
+make_all()
 {
     DIRS=$(ls -d */)
 
@@ -17,12 +17,11 @@ make_slides()
 	    cd $i
 	    make
 	fi
-    done
-    
+    done  
 }
 
 
-html_index_gen()
+generate_index_page()
 {
     cd $CWD
     echo '<html><title>Talks</title>' > "$HTML_FILE"
@@ -42,7 +41,7 @@ html_index_gen()
     echo '</ul></h4></html>' >> "$HTML_FILE"
 }
 
-python_server()
+start_python_server()
 {
     cd $CWD
     # git pull
@@ -56,20 +55,20 @@ python_server()
 
 if [ "$1" == "open" ]
 then
-    echo "Opening in Browser"
     if google-chrome --incognito index.html 2>1 >/dev/null
     then
-	echo ""
+        echo "Opening in Browser"
     else
-	echo "Google-chrome not installed."
+        firefox --private-window index.html 2>1 >/dev/null
+	    echo "Opening on Firefox."
     fi
     
 elif [ "$1" == "serve" ]
 then
-    python_server
+    start_python_server
 else
-    make_slides
-    html_index_gen
+    make_all
+    generate_index_page
 fi
 
 
