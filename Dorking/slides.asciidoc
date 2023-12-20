@@ -8,10 +8,13 @@ Harishbabu Rengaraj
 * Google dorking, can return information that is difficult to locate through simple search queries.
 * Is it even Legal? **Yes**, we are getting open and readily available information.
 
-== Where i got this?
-	
+== Where i got to know about this.
+* what is he doing?
+* why he is using '+' sign in search ? 
+
+.movie: Amazing Spiderman
 image::figures/Amazing_spiderman.gif[align="center",width="75%"]
-	
+
 == Basic Dorks
 	
 [options="header",width="75%",align="center"]
